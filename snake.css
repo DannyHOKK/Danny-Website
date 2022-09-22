@@ -1,0 +1,64 @@
+@font-face{
+    src: url(/font/PixeloidSans-nR3g1.ttf);
+    font-family: PixeloidSans-nR3g1;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/8bits.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-family: PixeloidSans-nR3g1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundimg{
+    width: 600px;
+    height: 400px;
+}
+
+.score{
+    font-size: 25px;
+    font-weight: 1000;
+    font-family: PixeloidSans-nR3g1;
+}
+
+
+#btn{
+    font-family: PixeloidSans-nR3g1;
+    font-weight: 1000;
+    margin-top: 40px;
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 20px 20px 20px 20px ;
+    cursor: pointer;
+}
+
+.homepage{
+    text-align: center;
+}
+
+#btn:hover{
+    color: white;
+    background-color: gray;
+}
+
