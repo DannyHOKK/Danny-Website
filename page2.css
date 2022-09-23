@@ -6,19 +6,49 @@ body{
 
 .container{
     display: flex;
+    align-items: center;
     background-color: gray;
     max-width: 100%;
     height: 100px;
 }
 
+.mid ul{
+    margin: 0;
+    padding: 0;
+}
+
 .mid ul li{
     display: inline-block;
-    padding: 10px;
-    margin: 0;
+    position: relative;
+}
+
+.mid ul li a{
+    font-size: 40px;
+    margin: 10px;
+    padding-bottom: 25px;
+}
+
+.mid ul li a:hover{
+    color: rgb(77, 57, 57);
+    cursor: default;
+}
+
+.mid ul li ul{
+    position: absolute;
+    left: 0;
+    top: 70px;
+    border: 1px solid black;
+    background-color: white;
+    display: none;
+}
+
+.mid ul li:hover > ul{
+    display: initial;
 }
 
 .right{
     display: flex;
+    float: right;
     align-items: center;
     margin-right: 50px;
 }

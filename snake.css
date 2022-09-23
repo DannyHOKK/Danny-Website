@@ -10,7 +10,7 @@ a{
 body{
     margin: 0;
     padding: 0;
-    background-image: url('/img/8bits.png');
+    background-image: url('https://i.pinimg.com/originals/14/ea/4a/14ea4af3b03403ab4071ba17300f8b64.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -19,7 +19,7 @@ body{
 .title{
     display: flex;
     justify-content: center;
-    font-family: PixeloidSans-nR3g1;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .container{
@@ -37,14 +37,14 @@ body{
 .score{
     font-size: 25px;
     font-weight: 1000;
-    font-family: PixeloidSans-nR3g1;
+    font-family: 'Press Start 2P', cursive;
 }
 
 
 #btn{
-    font-family: PixeloidSans-nR3g1;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 1000;
-    margin-top: 40px;
+    margin-top: 25px;
     padding: 10px;
     color: black;
     text-transform: uppercase;

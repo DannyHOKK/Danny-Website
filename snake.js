@@ -4,6 +4,21 @@ var canvasContext = canvas.getContext('2d')
 
 var score = document.getElementById("score")
 
+var gamestart = false
+
+var gameover = false
+
+
+// var link = document.createElement('link');
+
+// link.setAttribute('rel', 'stylesheet');
+
+// link.setAttribute('type', 'text/css');
+
+// link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700');
+
+// document.head.appendChild(link);
+
 function checkhitwall(){
     if(snake.tail[snake.tail.length -1].x == canvas.width){
         snake.tail[snake.tail.length -1].x = 0
@@ -27,7 +42,9 @@ function EatApple(){
 }
 
 window.onload = function(){
+    
     gameloop()
+
 }
 
 function gameloop(){
@@ -35,9 +52,33 @@ function gameloop(){
 }
 
 function show(){
-    update()
-    draw()
+
+    if(gamestart == true){
+        update()
+        draw()
+        drawapple()
+        drawsnake()
+    }else if (gamestart == false && gameover == false){
+
+        snake = new Snake(20,20,20)
+        apple = new Apple()
+        draw()
+        drawpresskey()
+        
+    }else if (gameover == true && gamestart == false){
+        draw()
+        snake = new Snake(20,20,20)
+        apple = new Apple()
+        canvasContext.font = "50px Arial"
+        canvasContext.fillStyle = "white"
+        canvasContext.fillText("You Lost!", canvas.width /2 - 100, canvas.height / 2 - 60)
+        canvasContext.font = "30px Arial"
+        canvasContext.fillText("Press Any Key to Start", canvas.width /2 - 140, canvas.height / 2 + 35)
+    
+    }
+
 }
+
 
 function update(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height)
@@ -45,19 +86,55 @@ function update(){
     checkhitwall()
     EatApple()
     updatescore()
+    checksnaketail()
 }
+
+function checksnaketail(){
+    for(let i = 2; i < snake.tail.length; i++){
+        if(snake.tail[0].x == snake.tail[i].x && snake.tail[0].y == snake.tail[i].y){
+            gameover = true
+            gamestart = false
+        }
+    }
+}
+
+window.addEventListener("keypress", (e)=>{
+    gamestart = true
+    gameover = false
+})
+
 
 function draw(){
     createRect(0,0,canvas.width, canvas.height, "black")
     createRect(0,0, canvas.width, canvas.height)
+}
+
+function drawpresskey(){
+    
+    canvasContext.font = "50px Arial"
+    canvasContext.fillStyle = "white"
+    canvasContext.fillText("Game Start!!",canvas.width /2 - 130, canvas.height / 2 - 60)
+    canvasContext.font = "30px Arial"
+    canvasContext.fillText("Press Any Key to Start", canvas.width /2 - 140, canvas.height / 2 + 35)
+
+}
+
+window.addEventListener("keypress", (e)=>{
+    gamestart = true
+})
+
+function drawsnake(){
 
     //draw snake 
     for (let i = 0; i < snake.tail.length; i++){
         createRect(snake.tail[i].x, snake.tail[i].y, snake.size -2.5 , snake.size -2.5, "white")
     }
+}
+
+function drawapple(){
+    
     //draw apple
     createRect(apple.x, apple.y, snake.size, snake.size, "red")
-
 }
 
 function updatescore(){

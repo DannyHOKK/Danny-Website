@@ -1,6 +1,6 @@
 @font-face{
     src: url(./font/PixeloidSans-nR3g1.ttf);
-    font-family: PixeloidSans-nR3g1;
+    font-family: 'Press Start 2P', cursive;
 }
 
 body{
@@ -14,8 +14,9 @@ li, a, button{
     color: black;
 }
 
+
+
 .container{ 
-    max-width: auto;
     display: flex;
     align-items: center;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 3px 2px 14px 2px rgba(0,0,0,0.16); 
@@ -33,15 +34,33 @@ li, a, button{
 
 .container_medium ul{
     margin: 0;
+    padding: 0;
 }
+
+.container_medium ul li{
+    
+    cursor: default;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.container_medium ul li a{
+    position: relative;
+    top: 10px;
+    padding-bottom: 30px;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
 
 .container_medium ul li ul{
     position: absolute;
     left: 0;
-    top: 65px;
+    top: 0px;
     border: 2px solid gray;
     border-radius: 10px 10px 10px 10px;
-    margin-top: 10px;
+    margin-top: 65px;
     padding: 10px;
     width: max-content;
     background: #fff;
@@ -55,29 +74,11 @@ li, a, button{
 .container_medium ul li:hover > ul{
     display: initial;
 }
-.container_medium ul li{
-    cursor: default;
-    position: relative;
-    display: inline-block;
-    
-}
-
-.container_medium ul li a{
-    position: relative;
-    top: 10px;
-    padding-bottom: 30px;
-}
-
-.container_medium li a{
-    display: block;
-    transition: all 0.3s ease 0s;
-}
 
 .container_medium div, .container_medium a{
-    padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    font-family: PixeloidSans-nR3g1;
+    font-family: 'Press Start 2P', cursive;
     outline: 0;
     white-space: normal;
 }
@@ -127,4 +128,12 @@ li, a, button{
     50%  { left:200px; top:200px;}
     75%  { left:0px; top:200px;}
     100% { left:0px; top:0px;}
+}
+
+.level-1{
+    padding-right: 30px;
+}
+
+.showphoto{
+    width: 100%;
 }
