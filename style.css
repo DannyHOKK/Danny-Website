@@ -1,11 +1,16 @@
 @font-face{
     src: url(./font/PixeloidSans-nR3g1.ttf);
-    font-family: 'Press Start 2P', cursive;
+    font-family: PixeloidSans-nR3g1;
+}
+
+*{ 
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
     margin: 0px;
-    padding: 0;
+    padding: 0px;
     line-height: 1.7;
 }
 
@@ -14,13 +19,15 @@ li, a, button{
     color: black;
 }
 
-
-
 .container{ 
+    position: fixed;
+    width: 100%;
+    background-color: white;
     display: flex;
     align-items: center;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 3px 2px 14px 2px rgba(0,0,0,0.16); 
     box-shadow: 0px 10px 13px -7px #000000, 3px 2px 14px 2px rgba(0,0,0,0.16);
+    z-index: 2;
 }
 
 .container_left{
@@ -40,6 +47,7 @@ li, a, button{
 .container_medium ul li{
     
     cursor: default;
+    margin-top: 10px;
     position: relative;
     display: inline-block;
     
@@ -65,11 +73,14 @@ li, a, button{
     width: max-content;
     background: #fff;
     display: none;
+    z-index: 2;
 }
 
 .container_medium ul li ul li{
     display: flex;
+
 }
+
 
 .container_medium ul li:hover > ul{
     display: initial;
@@ -136,4 +147,83 @@ li, a, button{
 
 .showphoto{
     width: 100%;
+}
+
+.loop{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* @media (max-aspect-ratio: 16/9){
+    .loop{
+        width: auto;
+        height: 100%;
+    }
+} */
+
+.level-3{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    position: relative;
+    height: 100vh;
+    left: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text{
+    font-family: PixeloidSans-nR3g1;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn{
+    position: relative;
+    top: 10%;
+    font-size: 30px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 30px 30px;
+    background-color: white;
+}
+
+.level-3::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height:200px;
+    background: linear-gradient(to top, rgb(198, 183, 183), transparent);
+    z-index: 1000;
+}
+
+.level-4{
+    position: relative;
+    height: 100vh;
+    background-color: rgb(198, 183, 183);
+    z-index: 1000;
+}
+
+.level-4-text{
+    font-family: PixeloidSans-nR3g1;
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
 }
