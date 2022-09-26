@@ -10,7 +10,7 @@ a{
 body{
     margin: 0;
     padding: 0;
-    background-image: url('https://i.pinimg.com/originals/14/ea/4a/14ea4af3b03403ab4071ba17300f8b64.png');
+    background-image: url('./img/8bits.png');
     background-size: cover;
     background-repeat: no-repeat;
 
